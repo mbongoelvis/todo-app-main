@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="todo-container">
+      <div class="logo-image">
+        <h1>TODO</h1>
+        <img src="./images/icon-moon.svg" alt="" class="toggle" />
+      </div>
+      <form action="#">
+        <div class="check">
+          <img src="" alt="" class="check-img"/>
+        </div>
+        <input type="text" class="task-value"/>
+      </form>
+      <div>
+        <!-- dive that containers all the task -->
+        <div class="total-task">
+          <!-- <p>No task! Add one</p> -->
+          <!-- <div class="task">
+            <div class="task-check">
+              <img src="" class="check-sign" />
+            </div>
+            <span class="task-text">mobngo elvis moribindaka</span>
+          </div> -->
+          
+        </div>
+        <div class="activity">
+          <p class="counter-text"><span class="taskNumber">0</span> items left</p>
+          <div class="controls">
+            <p class="all">All</p>
+            <p class="active-task">Active</p>
+            <p class="complete">Completed</p>
+          </div>
+          <p class="clear">Clear Completed</p>
+        </div>
+      </div>
+      <p class="comment">Drag and drop to reorder list</p>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

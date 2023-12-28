@@ -1,0 +1,173 @@
+:root{
+    --bg-bottom-dark: hsl(235, 21%, 11%); 
+    --bg-bottom-light: hsl(0, 0%, 98%);
+    --blue-dark: hsl(235, 24%, 19%);
+    --blue-light: hsl(236, 33%, 92%);
+    --blue-gray-blue-light: hsl(233, 11%, 84%);
+    --blue-gray-blue-dark: hsl(236, 33%, 92%);
+    --bright-blue: hsl(220, 98%, 61%);
+    --linear-bg: linear-gradient( hsl(192, 100%, 67%), hsl(280, 87%, 65%)); 
+
+}
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Josefin Sans;
+    transition: background-color .3s linear;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+/* styling the top and bottom */
+.top{
+    width: 100%;
+    height: 40%;
+    background: url("./images/bg-desktop-light.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bottom{
+    width: 100%;
+    height: 70%;
+    background-color: var(--bg-bottom-light);
+}
+.todo-container{
+    position:absolute;
+    height: 80%;
+    width: 550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo-image{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-image h1{
+    font-size: 40px;
+    letter-spacing: 6px;
+    color: white ;
+}
+.logo-image img{
+    cursor: pointer;
+    width: 30px;
+}
+/* add teask field */
+form{
+    width: 100%;
+    background-color: var(--blue-light);
+    height: 55px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+form input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    caret-color: blue;
+    font-weight: 400;
+    background-color: transparent;
+}
+form .check{
+    width: 30px;
+    height: 50%;
+    border-radius: 400px;
+    border: 1px solid gray;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.activity{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    align-items: center;
+    font-size: 15px;
+    background-color: var(--blue-light);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.2);
+}
+.activity .controls{
+    display: flex;
+    gap: 1rem;
+}
+.activity .controls .all{
+    color: var(--bright-blue);
+}
+.all, .active-task, .complete, .clear{
+    cursor: pointer;
+    color: var(--blue-dark);
+}
+.task-text, .counter-text, input{
+    color: var(--blue-dark);
+}
+.all:hover, .active-task:hover, .complete:hover{
+    color: black;
+    font-weight: 500;
+}
+.comment{
+    text-align: center;
+    color: gray;
+    margin-top: 4rem;
+}
+/* total task div styles */
+.total-task{
+    width: 100%;
+    min-height: 3rem;
+    background-color: var(--blue-light);
+}
+.total-task p{
+    text-align: center;
+    padding-top: 1rem;
+    color: gray;
+}
+.check-bg{
+    background: var(--linear-bg);
+}
+/* style for individual task */
+.task{
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 2rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+.task .task-check{
+    width: 27px;
+    height: 50%;
+    border-radius: 400px;
+    border: 1px solid gray;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .9s ease-in-out;
+}
+.task-text-toggle{
+    text-decoration: line-through;
+    color: rgba(128, 128, 128, 0.5);
+}
+.toggler{ 
+    --bg-bottom-light:  hsl(235, 21%, 11%);
+    --blue-light: hsl(235, 24%, 19%);
+    --blue-gray-blue-light: hsl(236, 33%, 92%);
+    transition: all 1s linear;
+    --blue-dark: white;
+}
