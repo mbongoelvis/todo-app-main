@@ -14,7 +14,6 @@ toggle.addEventListener("click", () => {
 const form = document.querySelector("form");
 const checkbox = document.querySelector(".check");
 const checkImg = document.querySelector(".check-img");
-const taskValue = document.querySelector(".task-value");
 
 // function to creat the task
 const creatTask = (name, reminder) => {
@@ -25,4 +24,25 @@ const creatTask = (name, reminder) => {
     taskInfo: name,
     reminder: reminder
   }
+  taskArray.push(task);
+  let storedTask = JSON.stringify(localStorage.setItem("task", taskArray))
+  return storedTask;
 }
+
+// handle the task submission
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const taskValue = document.querySelector(".task-value");
+  if (!taskValue.value.length == "") {
+    let reminderRandom = [true, false];
+    let name = taskValue.value.trim();
+    let reminder = reminderRandom[Math.floor(Math.random() * 1)];
+    taskValue.value = "";
+    creatTask(name, reminder);
+    let getData = JSON.parse(localStorage.getItem("taskArray"));
+    console.log(getData);
+  } else {
+    alert("Please input a valid task name")
+  }
+})
+
